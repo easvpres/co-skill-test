@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+    <changeSet id="create_tables" author="eas">
+        <comment>A sample change log</comment>
+        <createTable tableName="user">
+            <column name="id" type="BIGINT" autoIncrement="true"/>
+            <column name="number" type="VARCHAR"/>
+            <column name="balance" type="DOUBLE PRECISION"/>
+        </createTable>
+        <createTable tableName="product">
+            <column name="id" type="BIGINT" autoIncrement="true"/>
+            <column name="article" type="VARCHAR(30)"/>
+            <column name="price" type="DOUBLE PRECISION"/>
+        </createTable>
+        <createTable tableName="user_order">
+            <column name="id" type="BIGINT" autoIncrement="true"/>
+            <column name="user_id" type="BIGINT"/>
+            <column name="number" type="VARCHAR(20)"/>
+            <column name="timestamp" type="TIMESTAMP"/>
+            <column name="status" type="VARCHAR(10)"/>
+        </createTable>
+        <createTable tableName="order_product">
+            <column name="order_id" type="BIGINT"/>
+            <column name="product_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
